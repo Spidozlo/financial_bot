@@ -31,15 +31,18 @@
    git clone https://github.com/spidozlo/financial_bot.git
    cd financial_bot
 
-2.**Создайте и активируйте виртуальное окружение:**
+
+2. **Создайте и активируйте виртуальное окружение:**
 
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate  # Windows
 
+
 3. **Установите зависимости:**
    
 pip install -r requirements.txt
+
 
 **Настройка**
 
@@ -49,7 +52,9 @@ PARSER_USERNAME = "your_username_for_parser"
 PARSER_PASSWORD = "your_password_for_parser"
 Убедитесь, что config.py добавлен в .gitignore, чтобы приватные данные не попадали в публичный репозиторий.
 
+
 **Запуск**
+
 Чтобы запустить бота, выполните:
 bash
 python bot.py
