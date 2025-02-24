@@ -31,25 +31,30 @@
    git clone https://github.com/spidozlo/financial_bot.git
    cd financial_bot
 
-2.**Создайте и активируйте виртуальное окружение:**
+
+2. **Создайте и активируйте виртуальное окружение:**
+
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate  # Windows
 
+
 3. **Установите зависимости:**
+   
 pip install -r requirements.txt
 
-**Настройка**
-Создайте файл config.py на основе шаблона config.example.py и заполните его необходимыми данными:
 
-python
-**Копировать**
+**Настройка**
+
+Создайте файл config.py на основе шаблона config.example.py и заполните его необходимыми данными:
 API_TOKEN = "YOUR_TELEGRAM_BOT_API_TOKEN"
 PARSER_USERNAME = "your_username_for_parser"
 PARSER_PASSWORD = "your_password_for_parser"
 Убедитесь, что config.py добавлен в .gitignore, чтобы приватные данные не попадали в публичный репозиторий.
 
+
 **Запуск**
+
 Чтобы запустить бота, выполните:
 bash
 python bot.py
