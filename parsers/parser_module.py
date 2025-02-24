@@ -60,9 +60,11 @@ def parse_transactions(html):
         return []
     transactions = []
     for tr in tbody.find_all("tr"):
-        row_html = str(tr)
-        if "card_success.png" not in row_html:
-            continue  # пропускаем неуспешные транзакции
+        # Ищем тег <img> с атрибутом src, содержащим "card_success.png"
+        success_img = tr.find("img", src=lambda src: src and "card_success.png" in src)
+        if not success_img:
+            continue  # если такого тега нет, пропускаем транзакцию
+
         tds = tr.find_all("td")
         if len(tds) < 8:
             continue
@@ -75,7 +77,6 @@ def parse_transactions(html):
             amount = float(amount_clean)
         except ValueError:
             amount = None
-        # Остальные поля парсить не будем, оставляем только номер автомата и сумму
         transaction = {
             "index": index,
             "date_time": date_time,
@@ -84,6 +85,7 @@ def parse_transactions(html):
         }
         transactions.append(transaction)
     return transactions
+
 
 
 def get_latest_income_transactions():

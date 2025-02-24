@@ -1,6 +1,5 @@
 from aiogram import Router, types
 from aiogram.fsm.state import State, StatesGroup
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime
 from aiogram.fsm.context import FSMContext
 
@@ -11,6 +10,7 @@ from database.db import (
 )
 
 router = Router()
+
 
 @router.callback_query(lambda callback: callback.data == "view_statistics")
 async def callback_view_stats(callback: types.CallbackQuery):
@@ -27,9 +27,9 @@ async def callback_view_stats(callback: types.CallbackQuery):
     else:
         stats_text += "Нет записей.\n"
 
-
     # Отправляем сообщение с форматированным текстом (код-блок для моноширинного шрифта)
     await callback.message.answer(f"```{stats_text}```", parse_mode="Markdown")
+
 
 @router.callback_query(lambda callback: callback.data == "edit_statistics")
 async def edit_statistics_handler(callback: types.CallbackQuery):
@@ -56,7 +56,6 @@ async def edit_statistics_handler(callback: types.CallbackQuery):
         await callback.message.answer("Нет записей по расходам.")
 
 
-
 # --- Обработка удаления расходов ---
 @router.callback_query(lambda cb: cb.data and cb.data.startswith("delete_expense"))
 async def delete_expense_handler(callback: types.CallbackQuery):
@@ -73,6 +72,7 @@ class EditExpenseState(StatesGroup):
     new_amount = State()
     new_description = State()
 
+
 @router.callback_query(lambda cb: cb.data and cb.data.startswith("edit_expense"))
 async def edit_expense_handler(callback: types.CallbackQuery, state: FSMContext):
     record_id = callback.data.split(":")[1]
@@ -80,6 +80,7 @@ async def edit_expense_handler(callback: types.CallbackQuery, state: FSMContext)
     await callback.answer()
     await callback.message.answer("Введите новую сумму расхода:")
     await state.set_state(EditExpenseState.new_amount)
+
 
 @router.message(EditExpenseState.new_amount)
 async def process_edit_expense_amount(message: types.Message, state: FSMContext):
@@ -90,6 +91,7 @@ async def process_edit_expense_amount(message: types.Message, state: FSMContext)
         await state.set_state(EditExpenseState.new_description)
     except ValueError:
         await message.answer("Пожалуйста, введите корректную сумму.")
+
 
 @router.message(EditExpenseState.new_description)
 async def process_edit_expense_description(message: types.Message, state: FSMContext):
@@ -106,6 +108,7 @@ async def process_edit_expense_description(message: types.Message, state: FSMCon
 class EditDateTimeState(StatesGroup):
     new_datetime = State()
 
+
 @router.callback_query(lambda cb: cb.data and cb.data.startswith("edit_datetime"))
 async def edit_datetime_handler(callback: types.CallbackQuery, state: FSMContext):
     record_id = callback.data.split(":")[1]
@@ -113,6 +116,7 @@ async def edit_datetime_handler(callback: types.CallbackQuery, state: FSMContext
     await callback.answer()
     await callback.message.answer("Введите новую дату и время для расхода в формате YYYY-MM-DD HH:MM:SS:")
     await state.set_state(EditDateTimeState.new_datetime)
+
 
 @router.message(EditDateTimeState.new_datetime)
 async def process_edit_datetime(message: types.Message, state: FSMContext):

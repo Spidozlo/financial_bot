@@ -744,18 +744,6 @@
         "amount": 3.5
     },
     {
-        "index": "130",
-        "date_time": "19.02.2025 10:50:08",
-        "terminal": "136934",
-        "amount": 3.0
-    },
-    {
-        "index": "131",
-        "date_time": "19.02.2025 10:41:19",
-        "terminal": "136934",
-        "amount": 3.0
-    },
-    {
         "index": "132",
         "date_time": "19.02.2025 09:28:32",
         "terminal": "136934",
@@ -1272,12 +1260,6 @@
         "amount": 3.0
     },
     {
-        "index": "219",
-        "date_time": "14.02.2025 12:24:19",
-        "terminal": "136934",
-        "amount": 3.5
-    },
-    {
         "index": "220",
         "date_time": "14.02.2025 12:15:11",
         "terminal": "136934",
@@ -1309,6 +1291,96 @@
     },
     {
         "index": "225",
+        "date_time": "13.02.2025 19:33:56",
+        "terminal": "136934",
+        "amount": 2.0
+    },
+    {
+        "index": "23",
+        "date_time": "23.02.2025 14:37:20",
+        "terminal": "136934",
+        "amount": 3.0
+    },
+    {
+        "index": "24",
+        "date_time": "23.02.2025 14:35:32",
+        "terminal": "136934",
+        "amount": 3.5
+    },
+    {
+        "index": "25",
+        "date_time": "23.02.2025 14:33:47",
+        "terminal": "136934",
+        "amount": 3.0
+    },
+    {
+        "index": "126",
+        "date_time": "19.02.2025 12:05:12",
+        "terminal": "136934",
+        "amount": 3.0
+    },
+    {
+        "index": "127",
+        "date_time": "19.02.2025 12:03:25",
+        "terminal": "136934",
+        "amount": 3.0
+    },
+    {
+        "index": "215",
+        "date_time": "14.02.2025 21:38:32",
+        "terminal": "136934",
+        "amount": 3.0
+    },
+    {
+        "index": "226",
+        "date_time": "14.02.2025 10:21:45",
+        "terminal": "136934",
+        "amount": 3.0
+    },
+    {
+        "index": "227",
+        "date_time": "14.02.2025 09:53:11",
+        "terminal": "136934",
+        "amount": 3.0
+    },
+    {
+        "index": "228",
+        "date_time": "13.02.2025 20:19:47",
+        "terminal": "136934",
+        "amount": 3.5
+    },
+    {
+        "index": "229",
+        "date_time": "13.02.2025 19:33:56",
+        "terminal": "136934",
+        "amount": 2.0
+    },
+    {
+        "index": "130",
+        "date_time": "19.02.2025 11:06:23",
+        "terminal": "136934",
+        "amount": 3.5
+    },
+    {
+        "index": "219",
+        "date_time": "14.02.2025 15:14:09",
+        "terminal": "136934",
+        "amount": 3.0
+    },
+    {
+        "index": "230",
+        "date_time": "13.02.2025 19:33:56",
+        "terminal": "136934",
+        "amount": 2.0
+    },
+    {
+        "index": "131",
+        "date_time": "19.02.2025 11:06:23",
+        "terminal": "136934",
+        "amount": 3.5
+    },
+    {
+        "index": "231",
         "date_time": "13.02.2025 19:33:56",
         "terminal": "136934",
         "amount": 2.0

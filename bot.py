@@ -27,4 +27,7 @@ async def on_start():
 
 
 if __name__ == '__main__':
-    asyncio.run(on_start())
+    try:
+        asyncio.run(on_start())
+    except KeyboardInterrupt:
+        print('Bot остановлен')

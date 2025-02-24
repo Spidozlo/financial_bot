@@ -2566,5 +2566,71 @@
         "date_time": "12.02.2025 19:28:33",
         "terminal": "136935",
         "amount": 3.0
+    },
+    {
+        "index": "43",
+        "date_time": "22.02.2025 19:22:39",
+        "terminal": "136935",
+        "amount": 3.0
+    },
+    {
+        "index": "44",
+        "date_time": "22.02.2025 18:10:57",
+        "terminal": "136935",
+        "amount": 3.0
+    },
+    {
+        "index": "168",
+        "date_time": "19.02.2025 18:54:43",
+        "terminal": "136935",
+        "amount": 3.0
+    },
+    {
+        "index": "175",
+        "date_time": "19.02.2025 16:16:59",
+        "terminal": "136935",
+        "amount": 3.0
+    },
+    {
+        "index": "222",
+        "date_time": "18.02.2025 11:24:08",
+        "terminal": "136935",
+        "amount": 3.0
+    },
+    {
+        "index": "223",
+        "date_time": "18.02.2025 11:22:36",
+        "terminal": "136935",
+        "amount": 3.5
+    },
+    {
+        "index": "338",
+        "date_time": "15.02.2025 16:05:03",
+        "terminal": "136935",
+        "amount": 3.0
+    },
+    {
+        "index": "339",
+        "date_time": "15.02.2025 15:16:06",
+        "terminal": "136935",
+        "amount": 3.0
+    },
+    {
+        "index": "437",
+        "date_time": "12.02.2025 19:57:13",
+        "terminal": "136935",
+        "amount": 2.5
+    },
+    {
+        "index": "438",
+        "date_time": "12.02.2025 19:48:28",
+        "terminal": "136935",
+        "amount": 3.0
+    },
+    {
+        "index": "439",
+        "date_time": "12.02.2025 19:28:33",
+        "terminal": "136935",
+        "amount": 3.0
     }
 ]
