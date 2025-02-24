@@ -1,11 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
-import re
 import json
 import datetime
 from urllib.parse import quote_plus
 from config import USERNAME, PASSWORD
-def login(USERNAME, PASSWORD):
+
+
+def login(username, password):
     login_url = "https://p.vendista.ru/Auth/Login"  # верный URL для авторизации
     session = requests.Session()
     response = session.get(login_url)
@@ -17,8 +18,8 @@ def login(USERNAME, PASSWORD):
     csrf_token = token_input.get("value") if token_input else None
 
     payload = {
-        "Login": USERNAME,
-        "Password": PASSWORD
+        "Login": username,
+        "Password": password
     }
     if csrf_token:
         payload["__RequestVerificationToken"] = csrf_token
@@ -30,6 +31,7 @@ def login(USERNAME, PASSWORD):
 
     print("Авторизация прошла успешно!")
     return session
+
 
 def get_transactions_page(session, terminal_id, page_number):
     now = datetime.datetime.now()
@@ -48,6 +50,7 @@ def get_transactions_page(session, terminal_id, page_number):
     else:
         print(f"Ошибка при получении страницы {page_number} для терминала {terminal_id}")
         return None
+
 
 def parse_transactions(html):
     soup = BeautifulSoup(html, "lxml")
@@ -82,6 +85,7 @@ def parse_transactions(html):
         transactions.append(transaction)
     return transactions
 
+
 def get_latest_income_transactions():
     """
     Авторизуется, собирает актуальные транзакции для заданных терминалов,
@@ -89,7 +93,9 @@ def get_latest_income_transactions():
     Если файл уже существует, новые транзакции дописываются (без повторов).
     Функция возвращает объединённый список только новых транзакций для всех терминалов.
     """
-    session = login(USERNAME, PASSWORD)
+    username = USERNAME
+    password = PASSWORD
+    session = login(username, password)
     if session is None:
         raise Exception("Не удалось авторизоваться на сайте")
 
@@ -135,7 +141,8 @@ def get_latest_income_transactions():
         updated_transactions = existing_transactions + new_transactions
         with open(filename, "w", encoding="utf-8") as f:
             json.dump(updated_transactions, f, ensure_ascii=False, indent=4)
-        print(f"Для терминала {term} обновлено: добавлено {len(new_transactions)} новых транзакций, всего {len(updated_transactions)}")
+        print(f"Для терминала {term} обновлено: добавлено {len(new_transactions)} новых транзакций, всего"
+              f" {len(updated_transactions)}")
         all_new_transactions.extend(new_transactions)
 
     return all_new_transactions
@@ -144,6 +151,6 @@ def get_latest_income_transactions():
 def main():
     get_latest_income_transactions()
 
+
 if __name__ == "__main__":
     main()
-
